@@ -6,8 +6,10 @@
 //
 
 #import "ComposeViewController.h"
+#import "ComposeView.h"
 
 @interface ComposeViewController ()
+@property (strong, nonatomic) IBOutlet ComposeView *composeView;
 
 @end
 
@@ -16,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.composeView.caption setText:@"Placeholder"];
 }
 
 /*

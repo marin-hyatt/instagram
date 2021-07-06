@@ -65,12 +65,12 @@
         <scene sceneID="efu-M0-UNo">
             <objects>
                 <viewController id="GUa-vV-bL1" customClass="ComposeViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IQy-kp-oIL">
+                    <view key="view" contentMode="scaleToFill" id="IQy-kp-oIL" customClass="ComposeView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zT-Ht-tiv">
-                                <rect key="frame" x="0.0" y="56" width="222" height="203"/>
+                                <rect key="frame" x="0.0" y="56" width="210" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -78,11 +78,24 @@
                                     <outletCollection property="gestureRecognizers" destination="YSN-Jd-9q2" appends="YES" id="wY2-e1-XHL"/>
                                 </connections>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-75-cK4">
+                                <rect key="frame" x="218" y="77" width="176" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PoE-ll-KpO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="caption" destination="EQF-75-cK4" id="M5J-JJ-9bh"/>
+                            <outlet property="image" destination="2zT-Ht-tiv" id="HAA-am-2oB"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="hru-SG-Vyd"/>
+                    <connections>
+                        <outlet property="composeView" destination="IQy-kp-oIL" id="Fvx-YR-9x4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3t-K6-Npt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="YSN-Jd-9q2">
