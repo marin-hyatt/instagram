@@ -44,6 +44,15 @@
 
 // Signs up a new user
 - (void)registerUser {
+    // Checks to see if username and/or password are empty before proceeding with login
+    if ([self.loginView.usernameField.text isEqual:@""]) {
+        [self showErrorMessage:@"Username cannot be empty."];
+    }
+    
+    if ([self.loginView.passwordField.text isEqual:@""]) {
+        [self showErrorMessage:@"Password cannot be empty."];
+    }
+    
     // initialize a user object
     PFUser *newUser = [PFUser user];
     
@@ -55,6 +64,7 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);
+            [self showErrorMessage:error.localizedDescription];
         } else {
             NSLog(@"User registered successfully");
             
@@ -66,18 +76,46 @@
 
 // Logs in a registered user
 - (void)loginUser {
+    // Checks to see if username and/or password are empty before proceeding with login
+    if ([self.loginView.usernameField.text isEqual:@""]) {
+        [self showErrorMessage:@"Username cannot be empty."];
+    }
+    
+    if ([self.loginView.passwordField.text isEqual:@""]) {
+        [self showErrorMessage:@"Password cannot be empty."];
+    }
+    
     NSString *username = self.loginView.usernameField.text;
     NSString *password = self.loginView.passwordField.text;
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
+            [self showErrorMessage:error.localizedDescription];
         } else {
             NSLog(@"User logged in successfully");
             
             // display view controller that needs to shown after successful login
             [self performSegueWithIdentifier:@"HomeFeedSegue" sender:nil];
         }
+    }];
+}
+
+-(void)showErrorMessage: (NSString *)message {
+    // Creates error message
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                               message:message
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+    // create an OK action
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                             // handle response here.
+                                                     }];
+    // add the OK action to the alert controller
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:^{
     }];
 }
 

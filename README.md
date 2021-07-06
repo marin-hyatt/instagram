@@ -8,7 +8,7 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up to create a new account using Parse authentication
+- [x] User can sign up to create a new account using Parse authentication
 - [ ] User can log in and log out of his or her account
 - [ ] The current signed in user is persisted across app restarts
 - [ ] User can take a photo, add a caption, and post it to "Instagram"
@@ -35,7 +35,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Alerts appear in login screen containing specific error messages if login/sign up fails
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
