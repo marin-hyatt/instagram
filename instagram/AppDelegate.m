@@ -25,7 +25,21 @@
         configuration.server = @"https://parseapi.back4app.com";
     }];
 
+    // Test to see if Parse works
     [Parse initializeWithConfiguration:config];
+    
+    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
+    gameScore[@"score"] = @1337;
+    gameScore[@"playerName"] = @"Sean Plott";
+    gameScore[@"cheatMode"] = @NO;
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+     if (succeeded) {
+            NSLog(@"Object saved!");
+     } else {
+            NSLog(@"Error: %@", error.description);
+     }
+    }];
+    
     // Override point for customization after application launch.
     return YES;
 }
