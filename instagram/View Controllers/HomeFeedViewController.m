@@ -13,6 +13,7 @@
 
 @interface HomeFeedViewController ()
 - (IBAction)logOut:(id)sender;
+- (IBAction)postPhoto:(id)sender;
 
 
 
@@ -37,6 +38,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+// Segues to camera view controller
+- (IBAction)postPhoto:(id)sender {
+    [self performSegueWithIdentifier:@"ComposeViewController" sender:nil];
+}
 
 - (IBAction)logOut:(id)sender {
     //Creates app delegate, Main storyboard, and Login view controller. Then sets the root view controller (the one the user sees) to the Login view controller
