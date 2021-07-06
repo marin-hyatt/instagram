@@ -27,8 +27,10 @@
 }
 
 - (IBAction)postImage:(UIBarButtonItem *)sender {
+    NSString *caption = self.composeView.caption.text;
+    
     // Post photo to instagram
-    [Post postUserImage:self.composeView.image.image withCaption:@"Test" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Post postUserImage:self.composeView.image.image withCaption:caption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error != nil) {
             NSLog(@"Error! %@", error.localizedDescription);
         } else {
