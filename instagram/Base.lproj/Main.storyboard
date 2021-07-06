@@ -100,7 +100,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3t-K6-Npt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="YSN-Jd-9q2">
                     <connections>
-                        <segue destination="GtR-qH-cmO" kind="presentation" id="zgo-OL-spA"/>
+                        <segue destination="GtR-qH-cmO" kind="presentation" identifier="CameraViewController" id="zgo-OL-spA"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

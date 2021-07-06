@@ -7,8 +7,9 @@
 
 #import "ComposeViewController.h"
 #import "ComposeView.h"
+#import "CameraViewController.h"
 
-@interface ComposeViewController ()
+@interface ComposeViewController () <CameraViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet ComposeView *composeView;
 
 @end
@@ -18,17 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.composeView.caption setText:@"Placeholder"];
+    
+    // Sets itself as the delegate for camera view controller
+    
+    
 }
 
-/*
+- (void)passBackImage:(UIImage *)image {
+    self.composeView.image.image = image;
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    CameraViewController *cameraController = [segue destinationViewController];
+    cameraController.delegate = self;
 }
-*/
+
 
 @end

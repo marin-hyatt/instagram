@@ -43,16 +43,19 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     UIImage *resizedOriginalImage = [self resizeImage:originalImage withSize: CGSizeMake(originalImage.size.width * 0.8, originalImage.size.height * 0.8)];
+    
+    // Pass image back to compose view controller
+    [self.delegate passBackImage:resizedOriginalImage];
 
     // Post photo to instagram
-    [Post postUserImage:resizedOriginalImage withCaption:@"Test" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error != nil) {
-            NSLog(@"Error! %@", error.localizedDescription);
-        } else {
-            NSLog(@"Photo posted");
-        }
-        
-    }];
+//    [Post postUserImage:resizedOriginalImage withCaption:@"Test" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+//        if (error != nil) {
+//            NSLog(@"Error! %@", error.localizedDescription);
+//        } else {
+//            NSLog(@"Photo posted");
+//        }
+//        
+//    }];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
