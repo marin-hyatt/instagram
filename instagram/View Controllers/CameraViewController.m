@@ -46,16 +46,6 @@
     
     // Pass image back to compose view controller
     [self.delegate passBackImage:resizedOriginalImage];
-
-    // Post photo to instagram
-//    [Post postUserImage:resizedOriginalImage withCaption:@"Test" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-//        if (error != nil) {
-//            NSLog(@"Error! %@", error.localizedDescription);
-//        } else {
-//            NSLog(@"Photo posted");
-//        }
-//        
-//    }];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];

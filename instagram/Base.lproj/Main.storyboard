@@ -69,8 +69,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zT-Ht-tiv">
-                                <rect key="frame" x="0.0" y="56" width="210" height="203"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2zT-Ht-tiv">
+                                <rect key="frame" x="0.0" y="56" width="414" height="454"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -79,7 +79,7 @@
                                 </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-75-cK4">
-                                <rect key="frame" x="218" y="77" width="176" height="34"/>
+                                <rect key="frame" x="20" y="534" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -92,7 +92,14 @@
                             <outlet property="image" destination="2zT-Ht-tiv" id="HAA-am-2oB"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="hru-SG-Vyd"/>
+                    <navigationItem key="navigationItem" id="hru-SG-Vyd">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ZXZ-JP-thD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="X8D-4o-R3h">
+                            <connections>
+                                <action selector="postImage:" destination="GUa-vV-bL1" id="e9b-i1-6Yc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="composeView" destination="IQy-kp-oIL" id="Fvx-YR-9x4"/>
                     </connections>
@@ -208,6 +215,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

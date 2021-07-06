@@ -8,6 +8,7 @@
 #import "ComposeViewController.h"
 #import "ComposeView.h"
 #import "CameraViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController () <CameraViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet ComposeView *composeView;
@@ -23,6 +24,17 @@
     // Sets itself as the delegate for camera view controller
     
     
+}
+
+- (IBAction)postImage:(UIBarButtonItem *)sender {
+    // Post photo to instagram
+    [Post postUserImage:self.composeView.image.image withCaption:@"Test" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"Error! %@", error.localizedDescription);
+        } else {
+            NSLog(@"Photo posted");
+        }
+    }];
 }
 
 - (void)passBackImage:(UIImage *)image {
