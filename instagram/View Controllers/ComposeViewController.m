@@ -26,6 +26,10 @@
     
 }
 
+- (IBAction)cancelCompose:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)postImage:(UIBarButtonItem *)sender {
     NSString *caption = self.composeView.caption.text;
     
@@ -37,6 +41,9 @@
             NSLog(@"Photo posted");
         }
     }];
+    
+    // Dismiss view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)passBackImage:(UIImage *)image {

@@ -10,13 +10,14 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
+#import "FeedViewCell.h"
+#import "Post.h"
 
-@interface HomeFeedViewController ()
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) NSArray *feed;
 - (IBAction)logOut:(id)sender;
 - (IBAction)postPhoto:(id)sender;
-
-
-
+@property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @end
 
 @implementation HomeFeedViewController
@@ -24,10 +25,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.feedTableView.delegate = self;
+    self.feedTableView.dataSource = self;
+    
+    [self loadPosts];
 }
 
-// Logs out user and exits to login screen
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    FeedViewCell *cell = [self.feedTableView dequeueReusableCellWithIdentifier:@"FeedViewCell"];
+    
+    // Passes Post object to cell
+    cell.post = self.feed[indexPath.row];
+    [cell updateAppearance];
+    
+    return cell;
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.feed count];
+}
+
+-(void)loadPosts {
+    //Querys Parse for 20 instagram posts
+    
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // do something with the data fetched
+            NSLog(@"Feed successfully loaded");
+            self.feed = posts;
+            [self.feedTableView reloadData];
+        }
+        else {
+            // handle error
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
+}
 
 /*
 #pragma mark - Navigation
@@ -44,6 +84,7 @@
     [self performSegueWithIdentifier:@"ComposeViewController" sender:nil];
 }
 
+// Logs out user and exits to login screen
 - (IBAction)logOut:(id)sender {
     //Creates app delegate, Main storyboard, and Login view controller. Then sets the root view controller (the one the user sees) to the Login view controller
     SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
