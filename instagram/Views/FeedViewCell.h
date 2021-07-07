@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *likeCount;
 @property (weak, nonatomic) IBOutlet UILabel *commentCount;
 @property (weak, nonatomic) IBOutlet UILabel *timestamp;
+@property (weak, nonatomic) IBOutlet UILabel *detailUsername;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 - (void) showDetails:(UITapGestureRecognizer *)sender;
 -(void) updateAppearance;

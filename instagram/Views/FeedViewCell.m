@@ -41,13 +41,15 @@
         // Sets captions
         self.postCaption.text = self.post[@"caption"];
         
-        self.profilePicture.layer.cornerRadius = 25;
+        self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
         self.profilePicture.layer.masksToBounds = true;
     
         
         // Gets user
         PFUser *user = self.post[@"author"];
         self.username.text = user[@"username"];
+        self.detailUsername.text = user[@"username"];
+        
         
         self.likeCount.text = [NSString stringWithFormat:@"%@", self.post[@"likeCount"]];
         self.commentCount.text = [NSString stringWithFormat:@"%@", self.post[@"commentCount"]];
