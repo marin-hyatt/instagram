@@ -27,14 +27,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="379"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="XEv-RE-DE2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
-                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="414" id="C6z-TO-WRZ"/>
-                                                        <constraint firstAttribute="height" constant="330" id="Qf1-3r-lBo"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI8-aC-XMD">
                                                     <rect key="frame" x="20" y="338" width="60" height="21"/>
                                                     <constraints>
@@ -44,19 +36,36 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEg-dW-zGb">
+                                                    <rect key="frame" x="167.5" y="8" width="79" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="XEv-RE-DE2">
+                                                    <rect key="frame" x="0.0" y="16" width="414" height="314"/>
+                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="414" id="C6z-TO-WRZ"/>
+                                                        <constraint firstAttribute="height" constant="330" id="Qf1-3r-lBo"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="OEg-dW-zGb" firstAttribute="centerX" secondItem="tHh-BB-muH" secondAttribute="centerX" id="Hrl-ag-M6D"/>
                                                 <constraint firstAttribute="bottom" secondItem="FI8-aC-XMD" secondAttribute="bottom" constant="20" id="Pdm-fc-4WY"/>
-                                                <constraint firstItem="XEv-RE-DE2" firstAttribute="top" secondItem="tHh-BB-muH" secondAttribute="top" id="Zoc-GY-Zzn"/>
                                                 <constraint firstItem="XEv-RE-DE2" firstAttribute="leading" secondItem="tHh-BB-muH" secondAttribute="leading" id="atu-Mi-cKv"/>
+                                                <constraint firstItem="OEg-dW-zGb" firstAttribute="top" secondItem="tHh-BB-muH" secondAttribute="top" constant="8" id="hDe-df-akT"/>
                                                 <constraint firstItem="FI8-aC-XMD" firstAttribute="leading" secondItem="tHh-BB-muH" secondAttribute="leading" constant="20" id="lWi-14-boB"/>
                                                 <constraint firstItem="FI8-aC-XMD" firstAttribute="top" secondItem="XEv-RE-DE2" secondAttribute="bottom" constant="8" id="pFr-EJ-pMw"/>
                                                 <constraint firstAttribute="trailing" secondItem="XEv-RE-DE2" secondAttribute="trailing" id="qAr-1H-MY7"/>
+                                                <constraint firstItem="XEv-RE-DE2" firstAttribute="top" secondItem="OEg-dW-zGb" secondAttribute="bottom" constant="8" id="sHf-0k-7A4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="postCaption" destination="FI8-aC-XMD" id="Krj-HQ-4gs"/>
                                             <outlet property="postImageView" destination="XEv-RE-DE2" id="hcQ-Bs-m03"/>
+                                            <outlet property="username" destination="OEg-dW-zGb" id="uQC-Va-ORp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

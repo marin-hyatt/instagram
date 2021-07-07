@@ -20,11 +20,16 @@
     self.postImageView.image = nil;
     
     if (self.post[@"image"] != nil) {
+        // Update post with image, caption, username, etc
         PFFileObject *image = self.post[@"image"];
             [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
                 self.postImageView.image = [UIImage imageWithData:data];
             }];
         self.postCaption.text = self.post[@"caption"];
+        
+        // Gets user
+        PFUser *user = self.post[@"author"];
+        self.username.text = user[@"username"];
     }
     
 }
