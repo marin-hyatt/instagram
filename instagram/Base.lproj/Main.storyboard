@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedViewCell" rowHeight="466" id="YKK-2Y-OnA" customClass="FeedViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedViewCell" rowHeight="466" id="YKK-2Y-OnA" customClass="FeedViewCell">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="466"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YKK-2Y-OnA" id="tHh-BB-muH">
@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="XEv-RE-DE2">
-                                                    <rect key="frame" x="0.0" y="36.5" width="414" height="375"/>
+                                                    <rect key="frame" x="0.0" y="76" width="414" height="390"/>
                                                     <color key="backgroundColor" red="0.98431372549999996" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
@@ -36,27 +36,21 @@
                                                         <constraint firstAttribute="height" constant="375" id="d9V-Q4-9Ih"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI8-aC-XMD">
-                                                    <rect key="frame" x="8" y="419.5" width="398" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEg-dW-zGb">
-                                                    <rect key="frame" x="8" y="8" width="398" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <rect key="frame" x="76" y="8" width="330" height="60"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCu-4a-wxL" customClass="DetailView">
-                                                    <rect key="frame" x="0.0" y="36.5" width="414" height="375"/>
+                                                    <rect key="frame" x="0.0" y="76" width="414" height="390"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0Y-gd-QYj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="375"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-kh-Z3h">
-                                                            <rect key="frame" x="8" y="346.5" width="398" height="20.5"/>
+                                                            <rect key="frame" x="8" y="361.5" width="398" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -119,21 +113,29 @@
                                                         <constraint firstItem="B5N-dc-d2S" firstAttribute="leading" secondItem="0V0-i5-n91" secondAttribute="trailing" constant="8" id="vIk-6u-xbz"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7pv-I8-piq">
+                                                    <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                                    <color key="backgroundColor" red="0.58431372550000005" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="M3s-GK-eLK"/>
+                                                        <constraint firstAttribute="height" constant="60" id="ao4-dO-RZj"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="XEv-RE-DE2" firstAttribute="trailing" secondItem="JCu-4a-wxL" secondAttribute="trailing" id="0PT-tQ-ZSe"/>
+                                                <constraint firstItem="7pv-I8-piq" firstAttribute="top" secondItem="tHh-BB-muH" secondAttribute="top" constant="8" id="1Uy-gh-Brq"/>
+                                                <constraint firstAttribute="bottom" secondItem="XEv-RE-DE2" secondAttribute="bottom" id="BXg-lK-NK5"/>
                                                 <constraint firstAttribute="trailing" secondItem="OEg-dW-zGb" secondAttribute="trailing" constant="8" id="FVu-d7-LPg"/>
                                                 <constraint firstItem="XEv-RE-DE2" firstAttribute="top" secondItem="JCu-4a-wxL" secondAttribute="top" id="Nxs-Or-LJs"/>
                                                 <constraint firstItem="XEv-RE-DE2" firstAttribute="top" secondItem="OEg-dW-zGb" secondAttribute="bottom" constant="8" id="QEq-cp-vZh"/>
-                                                <constraint firstAttribute="bottom" secondItem="FI8-aC-XMD" secondAttribute="bottom" constant="26" id="U8q-7y-Wkz"/>
                                                 <constraint firstItem="XEv-RE-DE2" firstAttribute="leading" secondItem="tHh-BB-muH" secondAttribute="leading" id="e4l-e5-u4a"/>
-                                                <constraint firstAttribute="trailing" secondItem="FI8-aC-XMD" secondAttribute="trailing" constant="8" id="eHr-hn-WGT"/>
                                                 <constraint firstAttribute="trailing" secondItem="XEv-RE-DE2" secondAttribute="trailing" id="fIi-Lq-HLh"/>
-                                                <constraint firstItem="OEg-dW-zGb" firstAttribute="leading" secondItem="tHh-BB-muH" secondAttribute="leading" constant="8" id="gZV-ta-oRh"/>
+                                                <constraint firstItem="XEv-RE-DE2" firstAttribute="top" secondItem="7pv-I8-piq" secondAttribute="bottom" constant="8" id="lLE-UI-LYe"/>
+                                                <constraint firstItem="OEg-dW-zGb" firstAttribute="leading" secondItem="7pv-I8-piq" secondAttribute="trailing" constant="8" id="lkC-R0-TqK"/>
                                                 <constraint firstItem="XEv-RE-DE2" firstAttribute="bottom" secondItem="JCu-4a-wxL" secondAttribute="bottom" id="oNk-96-hZF"/>
-                                                <constraint firstItem="FI8-aC-XMD" firstAttribute="top" secondItem="XEv-RE-DE2" secondAttribute="bottom" constant="8" id="vGN-1N-VWQ"/>
+                                                <constraint firstItem="7pv-I8-piq" firstAttribute="leading" secondItem="tHh-BB-muH" secondAttribute="leading" constant="8" id="s7E-az-3F9"/>
                                                 <constraint firstItem="XEv-RE-DE2" firstAttribute="leading" secondItem="JCu-4a-wxL" secondAttribute="leading" id="wIU-i1-lgi"/>
-                                                <constraint firstItem="FI8-aC-XMD" firstAttribute="leading" secondItem="tHh-BB-muH" secondAttribute="leading" constant="8" id="y0t-IT-2gu"/>
                                                 <constraint firstItem="OEg-dW-zGb" firstAttribute="top" secondItem="tHh-BB-muH" secondAttribute="top" constant="8" id="yjG-Jx-5Hv"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -142,8 +144,8 @@
                                             <outlet property="detailView" destination="JCu-4a-wxL" id="XE7-g4-vR8"/>
                                             <outlet property="likeCount" destination="B5N-dc-d2S" id="YMz-f9-gAW"/>
                                             <outlet property="postCaption" destination="nCp-kh-Z3h" id="Uv9-7B-Ib2"/>
-                                            <outlet property="postCaption1" destination="FI8-aC-XMD" id="zZc-LJ-48F"/>
                                             <outlet property="postImageView" destination="XEv-RE-DE2" id="hcQ-Bs-m03"/>
+                                            <outlet property="profilePicture" destination="7pv-I8-piq" id="YfQ-6o-a9X"/>
                                             <outlet property="timestamp" destination="KRt-Ii-fDd" id="xBW-Pa-5h4"/>
                                             <outlet property="username" destination="OEg-dW-zGb" id="uQC-Va-ORp"/>
                                         </connections>

@@ -18,9 +18,12 @@
     
     // Add gesture recognizer
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showDetails:)];
+    UITapGestureRecognizer *tapHideGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideDetails:)];
     // Attach gesture recognizer to image view and enables user interaction
     [self.postImageView addGestureRecognizer:tapGestureRecognizer];
     [self.postImageView setUserInteractionEnabled:YES];
+    [self.detailView addGestureRecognizer:tapHideGestureRecognizer];
+    [self.detailView setUserInteractionEnabled:YES];
     
     self.detailView.hidden = YES;
 }
@@ -37,8 +40,9 @@
         
         // Sets captions
         self.postCaption.text = self.post[@"caption"];
-        self.postCaption1.text = self.post[@"caption"];
         
+        self.profilePicture.layer.cornerRadius = 25;
+        self.profilePicture.layer.masksToBounds = true;
     
         
         // Gets user
@@ -80,7 +84,17 @@
 
 -(void)showDetails:(UITapGestureRecognizer *)sender {
     NSLog(@"Show details");
+//    if (self.detailView.hidden == YES) {
     self.detailView.hidden = !self.detailView.hidden;
+    
+    // Passes post to detail view
+    self.detailView.post = self.post;
+}
+
+-(void)hideDetails:(UITapGestureRecognizer *)sender {
+    NSLog(@"Hide details");
+//    if (self.detailView.hidden == YES) {
+    self.detailView.hidden = YES;
     
     // Passes post to detail view
     self.detailView.post = self.post;
