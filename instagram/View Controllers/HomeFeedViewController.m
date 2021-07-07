@@ -18,6 +18,7 @@
 - (IBAction)logOut:(id)sender;
 - (IBAction)postPhoto:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation HomeFeedViewController
@@ -28,7 +29,13 @@
     self.feedTableView.delegate = self;
     self.feedTableView.dataSource = self;
     
+    // Gets posts from Parse
     [self loadPosts];
+    
+    // Initializes refresh control
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(loadPosts) forControlEvents:UIControlEventValueChanged];
+    [self.feedTableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -46,6 +53,7 @@
 }
 
 -(void)loadPosts {
+    NSLog(@"Load posts");
     //Querys Parse for 20 instagram posts
     
     // construct PFQuery
@@ -61,6 +69,7 @@
             NSLog(@"Feed successfully loaded");
             self.feed = posts;
             [self.feedTableView reloadData];
+            [self.refreshControl endRefreshing];
         }
         else {
             // handle error
