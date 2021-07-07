@@ -107,4 +107,5 @@
         // PFUser.current() will now be nil
     }];
 }
+
 @end

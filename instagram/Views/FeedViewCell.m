@@ -14,6 +14,12 @@
     [super awakeFromNib];
     // Initialization code
     [self updateAppearance];
+    
+    // Add gesture recognizer
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showDetails:)];
+    // Attach gesture recognizer to profile picture and enables user interaction
+    [self.postImageView addGestureRecognizer:tapGestureRecognizer];
+    [self.postImageView setUserInteractionEnabled:YES];
 }
 
 - (void)updateAppearance {
@@ -39,5 +45,10 @@
 
     // Configure the view for the selected state
 }
+
+-(void)showDetails:(UITapGestureRecognizer *)sender {
+    NSLog(@"Show details");
+}
+
 
 @end

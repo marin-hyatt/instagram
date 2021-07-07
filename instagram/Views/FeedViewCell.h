@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet UILabel *username;
--(void)updateAppearance;
+- (void) showDetails:(UITapGestureRecognizer *)sender;
+-(void) updateAppearance;
 
 @end
 
