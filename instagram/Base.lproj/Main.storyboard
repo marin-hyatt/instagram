@@ -218,24 +218,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2zT-Ht-tiv">
-                                <rect key="frame" x="0.0" y="56" width="414" height="454"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2zT-Ht-tiv">
+                                <rect key="frame" x="0.0" y="56" width="414" height="375"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="YSN-Jd-9q2" appends="YES" id="wY2-e1-XHL"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-75-cK4">
-                                <rect key="frame" x="20" y="534" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQF-75-cK4">
+                                <rect key="frame" x="20" y="455" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PoE-ll-KpO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EQF-75-cK4" firstAttribute="top" secondItem="2zT-Ht-tiv" secondAttribute="bottom" constant="24" id="4HC-92-Ga8"/>
+                            <constraint firstItem="2zT-Ht-tiv" firstAttribute="top" secondItem="PoE-ll-KpO" secondAttribute="top" id="8aS-3i-hFu"/>
+                            <constraint firstItem="EQF-75-cK4" firstAttribute="leading" secondItem="IQy-kp-oIL" secondAttribute="leading" constant="20" id="9iV-BB-5yM"/>
+                            <constraint firstItem="2zT-Ht-tiv" firstAttribute="leading" secondItem="PoE-ll-KpO" secondAttribute="leading" id="HhA-yr-s5n"/>
+                            <constraint firstItem="2zT-Ht-tiv" firstAttribute="trailing" secondItem="PoE-ll-KpO" secondAttribute="trailing" id="hFm-sH-JQI"/>
+                            <constraint firstItem="PoE-ll-KpO" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EQF-75-cK4" secondAttribute="bottom" constant="8" id="j7R-Xl-dn9"/>
+                            <constraint firstAttribute="trailing" secondItem="EQF-75-cK4" secondAttribute="trailing" constant="20" id="sni-8F-adi"/>
+                        </constraints>
                         <connections>
                             <outlet property="caption" destination="EQF-75-cK4" id="M5J-JJ-9bh"/>
                             <outlet property="image" destination="2zT-Ht-tiv" id="HAA-am-2oB"/>
@@ -260,26 +267,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3t-K6-Npt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="YSN-Jd-9q2">
                     <connections>
-                        <segue destination="GtR-qH-cmO" kind="presentation" identifier="CameraViewController" id="zgo-OL-spA"/>
+                        <action selector="onImagePickerClicked:" destination="GUa-vV-bL1" id="jGK-68-0td"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3469.5652173913045" y="62.946428571428569"/>
-        </scene>
-        <!--Camera View Controller-->
-        <scene sceneID="UyM-WR-vjB">
-            <objects>
-                <viewController id="GtR-qH-cmO" customClass="CameraViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hd9-5q-egm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="eMk-PN-IBv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VDy-u5-GIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4433" y="63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NdB-tG-5hQ">

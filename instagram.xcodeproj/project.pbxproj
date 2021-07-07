@@ -22,7 +22,6 @@
 		9BC737332694EEFB0024BD2C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737322694EEFB0024BD2C /* LoginViewController.m */; };
 		9BC737372694EFAB0024BD2C /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737362694EFAB0024BD2C /* LoginView.m */; };
 		9BC7373A2694F7B10024BD2C /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737392694F7B10024BD2C /* HomeFeedViewController.m */; };
-		9BC7373D269501C40024BD2C /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC7373C269501C40024BD2C /* CameraViewController.m */; };
 		9BC73741269508710024BD2C /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC73740269508710024BD2C /* Post.m */; };
 		9BC7374526950DBE0024BD2C /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC7374426950DBE0024BD2C /* ComposeViewController.m */; };
 		9BC737482695119F0024BD2C /* ComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737472695119F0024BD2C /* ComposeView.m */; };
@@ -77,8 +76,6 @@
 		9BC737362694EFAB0024BD2C /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		9BC737382694F7B10024BD2C /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		9BC737392694F7B10024BD2C /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
-		9BC7373B269501C40024BD2C /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		9BC7373C269501C40024BD2C /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		9BC7373F269508710024BD2C /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		9BC73740269508710024BD2C /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		9BC7374326950DBE0024BD2C /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
@@ -209,8 +206,6 @@
 				9BC737322694EEFB0024BD2C /* LoginViewController.m */,
 				9BC737382694F7B10024BD2C /* HomeFeedViewController.h */,
 				9BC737392694F7B10024BD2C /* HomeFeedViewController.m */,
-				9BC7373B269501C40024BD2C /* CameraViewController.h */,
-				9BC7373C269501C40024BD2C /* CameraViewController.m */,
 				9BC7374326950DBE0024BD2C /* ComposeViewController.h */,
 				9BC7374426950DBE0024BD2C /* ComposeViewController.m */,
 			);
@@ -487,7 +482,6 @@
 				9BC7374526950DBE0024BD2C /* ComposeViewController.m in Sources */,
 				9B37DCCA2694E8780073450E /* main.m in Sources */,
 				9BC737372694EFAB0024BD2C /* LoginView.m in Sources */,
-				9BC7373D269501C40024BD2C /* CameraViewController.m in Sources */,
 				9B37DCBC2694E8770073450E /* SceneDelegate.m in Sources */,
 				9BC73741269508710024BD2C /* Post.m in Sources */,
 			);
