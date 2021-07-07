@@ -7,6 +7,7 @@
 
 #import "FeedViewCell.h"
 #import "Parse/Parse.h"
+#import "DateTools.h"
 
 @implementation FeedViewCell
 
@@ -48,7 +49,25 @@
         self.commentCount.text = [NSString stringWithFormat:@"%@", self.post[@"commentCount"]];
         
         NSDate *createdAt = self.post.createdAt;
+        
+        // Format timestamp correctly
         self.timestamp.text = [NSString stringWithFormat:@"%@", createdAt];
+        
+        double timeInterval = createdAt.timeIntervalSinceNow;
+        
+        NSDate *timeAgoDate = [NSDate dateWithTimeIntervalSinceNow:timeInterval];
+        
+        // Configure output format
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateStyle = NSDateFormatterShortStyle;
+        formatter.timeStyle = NSDateFormatterNoStyle;
+        // Convert Date to String
+        // If more than a week has passed since the tweet, display the date. Else, use DateTool to get the time elapsed
+        if (fabs(timeInterval) > 604800) {
+            self.timestamp.text = [formatter stringFromDate:createdAt];
+        } else {
+            self.timestamp.text = timeAgoDate.shortTimeAgoSinceNow;
+        }
     }
     
 }

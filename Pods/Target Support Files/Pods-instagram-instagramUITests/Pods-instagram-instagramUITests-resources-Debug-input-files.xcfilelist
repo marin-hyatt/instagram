@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-instagram-instagramUITests/Pods-instagram-instagramUITests-resources.sh
+${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/Parse/ParseUI.bundle
