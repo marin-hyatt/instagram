@@ -10,10 +10,14 @@
 #import "Parse/Parse.h"
 #import "ProfileCollectionViewCell.h"
 
-@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) IBOutlet ProfileView *profileView;
 @property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
 @property (strong, nonatomic) NSArray *feed;
+@property CGFloat inset;
+@property CGFloat minimumLineSpacing;
+@property CGFloat minimumInteritemSpacing;
+@property CGFloat cellsPerRow;
 
 @end
 
@@ -27,6 +31,12 @@
     // Sets the user for the profile page to the current user, then updates the view with the relevant information
     self.profileView.user = [PFUser currentUser];
     [self.profileView updateAppearance];
+    
+    self.inset = 0;
+    self.minimumLineSpacing = 5;
+    self.minimumInteritemSpacing = 5;
+    self.cellsPerRow = 3;
+
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -37,6 +47,21 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 //    return [self.feed count];
     return 20;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    let marginsAndInsets = inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+//    let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
+//    return CGSize(width: itemWidth, height: itemWidth)
+    CGFloat marginsAndInsets = self.inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + self.minimumInteritemSpacing * (CGFloat)(self.cellsPerRow - 1);
+
+    //Accounting for the spaces in between the movie posters
+    CGFloat itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / (CGFloat)self.cellsPerRow);
+    return CGSizeMake(itemWidth, itemWidth);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return self.minimumLineSpacing;
 }
 
 /*
@@ -50,3 +75,6 @@
 */
 
 @end
+
+
+
