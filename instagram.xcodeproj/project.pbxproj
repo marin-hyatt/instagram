@@ -19,6 +19,9 @@
 		9B37DCD42694E8780073450E /* instagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B37DCD32694E8780073450E /* instagramTests.m */; };
 		9B37DCDF2694E8780073450E /* instagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B37DCDE2694E8780073450E /* instagramUITests.m */; };
 		9B61B60526965C7C00B2B0DE /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B61B60426965C7C00B2B0DE /* DetailView.m */; };
+		9B61B60D26978EE700B2B0DE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B61B60C26978EE700B2B0DE /* ProfileViewController.m */; };
+		9B61B61026978F1B00B2B0DE /* ProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B61B60F26978F1B00B2B0DE /* ProfileView.m */; };
+		9B61B61326978FB100B2B0DE /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B61B61226978FB100B2B0DE /* ProfileCollectionViewCell.m */; };
 		9BC737332694EEFB0024BD2C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737322694EEFB0024BD2C /* LoginViewController.m */; };
 		9BC737372694EFAB0024BD2C /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737362694EFAB0024BD2C /* LoginView.m */; };
 		9BC7373A2694F7B10024BD2C /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737392694F7B10024BD2C /* HomeFeedViewController.m */; };
@@ -70,6 +73,12 @@
 		9B37DCE02694E8780073450E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B61B60326965C7C00B2B0DE /* DetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailView.h; sourceTree = "<group>"; };
 		9B61B60426965C7C00B2B0DE /* DetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailView.m; sourceTree = "<group>"; };
+		9B61B60B26978EE700B2B0DE /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		9B61B60C26978EE700B2B0DE /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		9B61B60E26978F1B00B2B0DE /* ProfileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileView.h; sourceTree = "<group>"; };
+		9B61B60F26978F1B00B2B0DE /* ProfileView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileView.m; sourceTree = "<group>"; };
+		9B61B61126978FB100B2B0DE /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		9B61B61226978FB100B2B0DE /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		9BC737312694EEFB0024BD2C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9BC737322694EEFB0024BD2C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9BC737352694EFAB0024BD2C /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -208,6 +217,8 @@
 				9BC737392694F7B10024BD2C /* HomeFeedViewController.m */,
 				9BC7374326950DBE0024BD2C /* ComposeViewController.h */,
 				9BC7374426950DBE0024BD2C /* ComposeViewController.m */,
+				9B61B60B26978EE700B2B0DE /* ProfileViewController.h */,
+				9B61B60C26978EE700B2B0DE /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -223,6 +234,10 @@
 				9BC7374A26951E060024BD2C /* FeedViewCell.m */,
 				9B61B60326965C7C00B2B0DE /* DetailView.h */,
 				9B61B60426965C7C00B2B0DE /* DetailView.m */,
+				9B61B60E26978F1B00B2B0DE /* ProfileView.h */,
+				9B61B60F26978F1B00B2B0DE /* ProfileView.m */,
+				9B61B61126978FB100B2B0DE /* ProfileCollectionViewCell.h */,
+				9B61B61226978FB100B2B0DE /* ProfileCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -483,6 +498,9 @@
 				9B37DCCA2694E8780073450E /* main.m in Sources */,
 				9BC737372694EFAB0024BD2C /* LoginView.m in Sources */,
 				9B37DCBC2694E8770073450E /* SceneDelegate.m in Sources */,
+				9B61B61326978FB100B2B0DE /* ProfileCollectionViewCell.m in Sources */,
+				9B61B60D26978EE700B2B0DE /* ProfileViewController.m in Sources */,
+				9B61B61026978F1B00B2B0DE /* ProfileView.m in Sources */,
 				9BC73741269508710024BD2C /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

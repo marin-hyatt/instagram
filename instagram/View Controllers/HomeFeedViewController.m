@@ -52,9 +52,17 @@
     return [self.feed count];
 }
 
+//// If there are more posts to display, get more posts
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row == [self.feed count] - 1) {
+//        [self loadPosts];
+//        [self.feedTableView reloadData];
+//    }
+//}
+
 -(void)loadPosts {
     NSLog(@"Load posts");
-    //Querys Parse for 20 instagram posts
+    //Querys Parse for instagram posts
     
     // construct PFQuery
     PFQuery *postQuery = [Post query];
