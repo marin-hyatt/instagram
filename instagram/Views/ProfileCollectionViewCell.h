@@ -6,11 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileCollectionViewCell : UICollectionViewCell
+@property Post *post;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
+-(void)updateAppearance;
 
 @end
 

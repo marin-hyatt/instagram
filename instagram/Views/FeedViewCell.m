@@ -32,6 +32,7 @@
     self.postImageView.image = nil;
     
     if (self.post[@"image"] != nil) {
+        // TODO: fix data request
         // Update post with image, caption, username, etc
         PFFileObject *image = self.post[@"image"];
             [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
