@@ -6,7 +6,6 @@
 //
 
 #import "TabController.h"
-#import "ProfileNavigationController.h"
 #import "Parse/Parse.h"
 #import "ProfileViewController.h"
 
@@ -27,6 +26,7 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController
  didSelectViewController:(UIViewController *)viewController {
+    // Checks if profile tab has been selected
     if (tabBarController.selectedIndex == 1) {
         NSLog(@"Profile view controller selected");
         // Pass current user to profile view

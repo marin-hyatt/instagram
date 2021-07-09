@@ -17,7 +17,7 @@
     // Initialization code
     [self updateAppearance];
     
-    // Add gesture recognizer
+    // Add gesture recognizer for showing details screen
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showDetails:)];
     UITapGestureRecognizer *tapHideGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideDetails:)];
     // Attach gesture recognizer to image view and enables user interaction
@@ -25,6 +25,11 @@
     [self.postImageView setUserInteractionEnabled:YES];
     [self.detailView addGestureRecognizer:tapHideGestureRecognizer];
     [self.detailView setUserInteractionEnabled:YES];
+    
+    // Add gesture recognizer for showing user profile
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onProfileTapped:)];
+    [self.profilePicture addGestureRecognizer:profileTapGestureRecognizer];
+    [self.profilePicture setUserInteractionEnabled:YES];
     
     self.detailView.hidden = YES;
 }
@@ -100,6 +105,14 @@
     
     // Passes post to detail view
     self.detailView.post = self.post;
+}
+
+-(void)onProfileTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"Profile picture tapped");
+    
+    // Calls delegate method, passing in the author of the post
+    [self.delegate feedCell:self didTap:self.post[@"author"]];
+    
 }
 
 

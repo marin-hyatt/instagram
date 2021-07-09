@@ -9,8 +9,12 @@
 #import "Post.h"
 #import "Parse/Parse.h"
 #import "DetailView.h"
+#import "FeedViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol FeedViewCellDelegate;
+
 
 @interface FeedViewCell : UITableViewCell
 @property Post *post;
@@ -23,8 +27,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *timestamp;
 @property (weak, nonatomic) IBOutlet UILabel *detailUsername;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (weak, nonatomic) id<FeedViewCellDelegate> delegate; // Delegate that handles the profile picture being tapped
 - (void) showDetails:(UITapGestureRecognizer *)sender;
 -(void) updateAppearance;
+
+@end
+
+@protocol FeedViewCellDelegate <NSObject>
+- (void)feedCell:(FeedViewCell *) feedCell didTap: (PFUser *)user;
 
 @end
 

@@ -8,12 +8,13 @@
 #import "HomeFeedViewController.h"
 #import "Parse/Parse.h"
 #import "LoginViewController.h"
+#import "ProfileViewController.h"
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
 #import "FeedViewCell.h"
 #import "Post.h"
 
-@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, FeedViewCellDelegate>
 @property (nonatomic, strong) NSArray *feed;
 - (IBAction)logOut:(id)sender;
 - (IBAction)postPhoto:(id)sender;
@@ -48,6 +49,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FeedViewCell *cell = [self.feedTableView dequeueReusableCellWithIdentifier:@"FeedViewCell"];
+    
+    cell.delegate = self;
     
     // Passes Post object to cell
     cell.post = self.feed[indexPath.row];
@@ -87,15 +90,19 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ProfileViewController"]) {
+        // Passes the user to the profile view controller
+        UINavigationController *navigationController = [segue destinationViewController];
+        ProfileViewController *vc = (ProfileViewController*)navigationController.topViewController;
+        vc.user = sender;
+    }
 }
-*/
+
 
 // Segues to camera view controller
 - (IBAction)postPhoto:(id)sender {
@@ -115,6 +122,10 @@
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
     }];
+}
+
+- (void)feedCell:(FeedViewCell *)feedCell didTap:(PFUser *)user {
+    [self performSegueWithIdentifier:@"ProfileViewController" sender:user];
 }
 
 @end
