@@ -190,7 +190,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="feedTableView" destination="0R4-aT-m9A" id="klL-a9-KhR"/>
-                        <segue destination="BBu-mt-7AB" kind="show" identifier="ProfileViewController" id="LY6-vc-nf9"/>
+                        <segue destination="BBu-mt-7AB" kind="presentation" identifier="ProfileViewController" id="LY6-vc-nf9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2h-m9-Q58" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,6 +201,7 @@
         <scene sceneID="DSn-1e-Bii">
             <objects>
                 <navigationController id="MTe-gK-df7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rG1-6h-4RX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="leH-kF-dlL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -211,7 +212,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAr-jB-Gr4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="541" y="1732"/>
+            <point key="canvasLocation" x="746" y="1732"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="efu-M0-UNo">
@@ -278,7 +279,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1539" y="1732"/>
+            <point key="canvasLocation" x="2078" y="1732"/>
         </scene>
         <!--Home-->
         <scene sceneID="NdB-tG-5hQ">
@@ -308,10 +309,11 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="Jis-RG-1XX"/>
                     <navigationItem key="navigationItem" id="eLV-Gf-VvV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fku-hG-A4t">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jaB-gR-kpV">
+                        <rect key="frame" x="0.0" y="-54" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -327,11 +329,11 @@
             <objects>
                 <viewController id="y2A-HG-kW2" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p4E-MK-wh4" customClass="ProfileView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="daL-k1-M8J">
-                                <rect key="frame" x="0.0" y="168" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="706"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vza-6s-ChC">
                                     <size key="itemSize" width="128" height="128"/>
@@ -360,13 +362,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ad-0f-OTw">
-                                <rect key="frame" x="78" y="112.5" width="84" height="21"/>
+                                <rect key="frame" x="78" y="80.5" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-JX-WVd">
-                                <rect key="frame" x="10" y="98" width="50" height="50"/>
+                                <rect key="frame" x="10" y="66" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="BYi-zJ-atw"/>
                                     <constraint firstAttribute="height" constant="50" id="ZJD-Kx-ENE"/>

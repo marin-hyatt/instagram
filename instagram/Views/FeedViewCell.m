@@ -30,6 +30,8 @@
     UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onProfileTapped:)];
     [self.profilePicture addGestureRecognizer:profileTapGestureRecognizer];
     [self.profilePicture setUserInteractionEnabled:YES];
+    [self.username addGestureRecognizer:profileTapGestureRecognizer];
+    [self.username setUserInteractionEnabled:YES];
     
     self.detailView.hidden = YES;
 }

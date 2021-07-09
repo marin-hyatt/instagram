@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
+@property int numDataToLoad;
 @end
 
 @implementation HomeFeedViewController
@@ -32,18 +33,20 @@
     self.feedTableView.dataSource = self;
     
     // Gets posts from Parse
-    [self loadPosts];
+    self.numDataToLoad = 20;
+    [self loadPosts:self.numDataToLoad];
     
     // Initializes refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(loadPosts) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(loadPosts:) forControlEvents:UIControlEventValueChanged];
     [self.feedTableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row + 1 == [self.feed count] && !self.isMoreDataLoading){
         self.isMoreDataLoading = true;
-        [self loadPosts];
+        self.numDataToLoad++;
+        [self loadPosts:self.numDataToLoad];
     }
 }
 
@@ -63,7 +66,7 @@
     return [self.feed count];
 }
 
--(void)loadPosts {
+-(void)loadPosts:(int)limit {
     NSLog(@"Load posts");
     //Querys Parse for instagram posts
     
@@ -71,7 +74,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    postQuery.limit = 20;
+    postQuery.limit = limit;
 
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
