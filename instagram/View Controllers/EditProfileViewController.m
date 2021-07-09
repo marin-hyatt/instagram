@@ -114,6 +114,8 @@
             [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
               if (succeeded) {
                      NSLog(@"Profile picture updated!");
+                  // Dismiss view controller
+                  [self dismissViewControllerAnimated:YES completion:nil];
               } else {
                      NSLog(@"Error: %@", error.description);
               }
