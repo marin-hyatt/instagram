@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 #import "ProfileCollectionViewCell.h"
 #import "Post.h"
+#import "EditProfileViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) IBOutlet ProfileView *profileView;
@@ -26,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"USER!!!: %@", self.user);
     
     self.postCollectionView.delegate = self;
     self.postCollectionView.dataSource = self;
@@ -40,9 +40,15 @@
     self.minimumInteritemSpacing = 5;
     self.cellsPerRow = 3;
     
+    // Add gesture recognizer for showing user profile
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onProfileTapped:)];
+    [self.profileView.profilePicture addGestureRecognizer:profileTapGestureRecognizer];
+    [self.profileView.profilePicture setUserInteractionEnabled:YES];
+    
     [self loadPosts];
 
 }
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProfileCollectionViewCell *cell = [self.postCollectionView dequeueReusableCellWithReuseIdentifier:@"ProfileCollectionViewCell" forIndexPath:indexPath];
@@ -96,15 +102,26 @@
     return self.minimumLineSpacing;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    EditProfileViewController *vc = [segue destinationViewController];
+    vc.user = self.user;
+
 }
-*/
+
+
+-(void)onProfileTapped:(UITapGestureRecognizer *)sender {
+    PFUser *user = [PFUser currentUser];
+    if ([self.user.username isEqual: user.username]) {
+        NSLog(@"Profile picture tapped");
+        [self performSegueWithIdentifier:@"EditProfileViewController" sender:nil];
+    }
+}
 
 @end
 

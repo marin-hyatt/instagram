@@ -11,6 +11,8 @@
 		5A83F78AA60FEE1902315C30 /* libPods-instagram-instagramUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32332912C685A97EA0819C46 /* libPods-instagram-instagramUITests.a */; };
 		809407CEC53D22E739B0CC94 /* libPods-instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BA46454223AD81A903ADD6 /* libPods-instagram.a */; };
 		9B2EE1432698D7E500391917 /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2EE1422698D7E500391917 /* TabController.m */; };
+		9B2EE1492698F2AB00391917 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2EE1482698F2AB00391917 /* EditProfileViewController.m */; };
+		9B2EE14C2698F43100391917 /* EditProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2EE14B2698F43100391917 /* EditProfileView.m */; };
 		9B37DCB92694E8770073450E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B37DCB82694E8770073450E /* AppDelegate.m */; };
 		9B37DCBC2694E8770073450E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B37DCBB2694E8770073450E /* SceneDelegate.m */; };
 		9B37DCC22694E8770073450E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B37DCC02694E8770073450E /* Main.storyboard */; };
@@ -58,6 +60,10 @@
 		8F845C62BAF2F287A6C48255 /* Pods-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramTests/Pods-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B2EE1412698D7E500391917 /* TabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabController.h; sourceTree = "<group>"; };
 		9B2EE1422698D7E500391917 /* TabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabController.m; sourceTree = "<group>"; };
+		9B2EE1472698F2AB00391917 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		9B2EE1482698F2AB00391917 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		9B2EE14A2698F43100391917 /* EditProfileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileView.h; sourceTree = "<group>"; };
+		9B2EE14B2698F43100391917 /* EditProfileView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileView.m; sourceTree = "<group>"; };
 		9B37DCB42694E8770073450E /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B37DCB72694E8770073450E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B37DCB82694E8770073450E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -224,6 +230,8 @@
 				9B61B60C26978EE700B2B0DE /* ProfileViewController.m */,
 				9B2EE1412698D7E500391917 /* TabController.h */,
 				9B2EE1422698D7E500391917 /* TabController.m */,
+				9B2EE1472698F2AB00391917 /* EditProfileViewController.h */,
+				9B2EE1482698F2AB00391917 /* EditProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -243,6 +251,8 @@
 				9B61B60F26978F1B00B2B0DE /* ProfileView.m */,
 				9B61B61126978FB100B2B0DE /* ProfileCollectionViewCell.h */,
 				9B61B61226978FB100B2B0DE /* ProfileCollectionViewCell.m */,
+				9B2EE14A2698F43100391917 /* EditProfileView.h */,
+				9B2EE14B2698F43100391917 /* EditProfileView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -496,6 +506,7 @@
 				9BC737332694EEFB0024BD2C /* LoginViewController.m in Sources */,
 				9BC7373A2694F7B10024BD2C /* HomeFeedViewController.m in Sources */,
 				9B37DCB92694E8770073450E /* AppDelegate.m in Sources */,
+				9B2EE14C2698F43100391917 /* EditProfileView.m in Sources */,
 				9BC7374B26951E060024BD2C /* FeedViewCell.m in Sources */,
 				9BC737482695119F0024BD2C /* ComposeView.m in Sources */,
 				9B61B60526965C7C00B2B0DE /* DetailView.m in Sources */,
@@ -505,6 +516,7 @@
 				9BC737372694EFAB0024BD2C /* LoginView.m in Sources */,
 				9B37DCBC2694E8770073450E /* SceneDelegate.m in Sources */,
 				9B61B61326978FB100B2B0DE /* ProfileCollectionViewCell.m in Sources */,
+				9B2EE1492698F2AB00391917 /* EditProfileViewController.m in Sources */,
 				9B61B60D26978EE700B2B0DE /* ProfileViewController.m in Sources */,
 				9B61B61026978F1B00B2B0DE /* ProfileView.m in Sources */,
 				9BC73741269508710024BD2C /* Post.m in Sources */,

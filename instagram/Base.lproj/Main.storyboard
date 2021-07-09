@@ -124,7 +124,7 @@
                                                         <constraint firstItem="8rA-jg-tFj" firstAttribute="leading" secondItem="0V0-i5-n91" secondAttribute="leading" id="wLY-SY-K1N"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7pv-I8-piq">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7pv-I8-piq">
                                                     <rect key="frame" x="8" y="8" width="40" height="40"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -367,8 +367,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-JX-WVd">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-JX-WVd">
                                 <rect key="frame" x="10" y="66" width="50" height="50"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="BYi-zJ-atw"/>
                                     <constraint firstAttribute="height" constant="50" id="ZJD-Kx-ENE"/>
@@ -396,11 +397,68 @@
                     <connections>
                         <outlet property="postCollectionView" destination="daL-k1-M8J" id="adA-Td-T96"/>
                         <outlet property="profileView" destination="p4E-MK-wh4" id="64e-k7-TPH"/>
+                        <segue destination="qWb-Js-QVk" kind="presentation" identifier="EditProfileViewController" id="yO6-e3-9Ug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Whs-IL-hum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1960.8695652173915" y="952.90178571428567"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="Txq-Vd-1Uz">
+            <objects>
+                <viewController id="qWb-Js-QVk" customClass="EditProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L2i-4N-sld" customClass="EditProfileView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="K3E-up-3Os">
+                                <rect key="frame" x="50" y="164" width="314" height="314"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="K3E-up-3Os" secondAttribute="height" multiplier="1:1" id="Jfu-9T-LSq"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0Us-oe-8Yq" appends="YES" id="gU1-w5-g2J"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eE4-X0-11h">
+                                <rect key="frame" x="100" y="528" width="214" height="30"/>
+                                <state key="normal" title="Update Profile Picture"/>
+                                <connections>
+                                    <action selector="onUpdateButtonPressed:" destination="qWb-Js-QVk" eventType="touchUpInside" id="QsC-Hb-j2H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hSG-MN-DzW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eE4-X0-11h" firstAttribute="top" secondItem="K3E-up-3Os" secondAttribute="bottom" constant="50" id="0VY-jz-1lh"/>
+                            <constraint firstItem="hSG-MN-DzW" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eE4-X0-11h" secondAttribute="bottom" constant="50" id="4I0-eo-3El"/>
+                            <constraint firstItem="eE4-X0-11h" firstAttribute="leading" secondItem="hSG-MN-DzW" secondAttribute="leading" constant="100" id="CTF-OL-vv7"/>
+                            <constraint firstItem="hSG-MN-DzW" firstAttribute="trailing" secondItem="K3E-up-3Os" secondAttribute="trailing" constant="50" id="Rwb-4R-kmk"/>
+                            <constraint firstItem="hSG-MN-DzW" firstAttribute="trailing" secondItem="eE4-X0-11h" secondAttribute="trailing" constant="100" id="TsZ-D3-KhR"/>
+                            <constraint firstItem="K3E-up-3Os" firstAttribute="leading" secondItem="hSG-MN-DzW" secondAttribute="leading" constant="50" id="adi-lt-D3a"/>
+                            <constraint firstItem="K3E-up-3Os" firstAttribute="centerY" secondItem="L2i-4N-sld" secondAttribute="centerY" constant="-100" id="gOm-80-YZn"/>
+                            <constraint firstItem="K3E-up-3Os" firstAttribute="centerX" secondItem="L2i-4N-sld" secondAttribute="centerX" id="jl9-g2-SLO"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="profilePicture" destination="K3E-up-3Os" id="5SP-Wq-mc5"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="editProfileView" destination="L2i-4N-sld" id="Qiu-V0-PJC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgD-oI-CqX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0Us-oe-8Yq">
+                    <connections>
+                        <action selector="onProfilePictureTapped:" destination="qWb-Js-QVk" id="ivt-70-eED"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3138" y="953"/>
         </scene>
         <!--Tab Controller-->
         <scene sceneID="08f-Pz-SDd">

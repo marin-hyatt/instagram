@@ -6,6 +6,7 @@
 //
 
 #import "ProfileView.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation ProfileView
 
@@ -25,6 +26,10 @@
     // Sets profile picture
     self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
     self.profilePicture.layer.masksToBounds = true;
+    
+    PFFileObject * postImage = self.user[@"profilePhoto"];
+    NSURL * imageURL = [NSURL URLWithString:postImage.url];
+    [self.profilePicture setImageWithURL:imageURL];
 }
 
 @end

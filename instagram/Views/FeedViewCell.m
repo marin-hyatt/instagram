@@ -28,9 +28,10 @@
     
     // Add gesture recognizer for showing user profile
     UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onProfileTapped:)];
+    UITapGestureRecognizer *usernameTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onProfileTapped:)];
     [self.profilePicture addGestureRecognizer:profileTapGestureRecognizer];
     [self.profilePicture setUserInteractionEnabled:YES];
-    [self.username addGestureRecognizer:profileTapGestureRecognizer];
+    [self.username addGestureRecognizer:usernameTapGestureRecognizer];
     [self.username setUserInteractionEnabled:YES];
     
     self.detailView.hidden = YES;
@@ -50,12 +51,16 @@
         
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
         self.profilePicture.layer.masksToBounds = true;
-    
         
         // Gets user
         PFUser *user = self.post[@"author"];
         self.username.text = user[@"username"];
         self.detailUsername.text = user[@"username"];
+        
+        // Gets profile picture from user
+        PFFileObject * profilePhoto = user[@"profilePhoto"];
+        NSURL * profileImageURL = [NSURL URLWithString:profilePhoto.url];
+        [self.profilePicture setImageWithURL:profileImageURL];
         
         
         self.likeCount.text = [NSString stringWithFormat:@"%@", self.post[@"likeCount"]];
