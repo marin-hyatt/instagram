@@ -2,7 +2,7 @@
 
 **Instagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **14** hours spent in total
 
 ## User Stories
 
@@ -40,14 +40,19 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Autolayout in collection views
+2. How to use navigation controllers correctly
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![](instagram_gif_1.gif)
+![](instagram_gif_2.gif)
+![](instagram_gif_3.gif)
+![](instagram_gif_4.gif)
+![](instagram_gif_5.gif)
+![](instagram_gif_6.gif)
 
 GIF created with [Kap](https://getkap.co/).
 

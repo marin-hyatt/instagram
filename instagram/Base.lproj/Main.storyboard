@@ -30,7 +30,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="XEv-RE-DE2">
                                                     <rect key="frame" x="0.0" y="56" width="414" height="410"/>
-                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="414" id="Lyl-KF-GRU"/>
