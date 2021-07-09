@@ -8,6 +8,7 @@
 #import "FeedViewCell.h"
 #import "Parse/Parse.h"
 #import "DateTools.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation FeedViewCell
 
@@ -32,13 +33,11 @@
     self.postImageView.image = nil;
     
     if (self.post[@"image"] != nil) {
-        // TODO: fix data request
         // Update post with image, caption, username, etc
-        PFFileObject *image = self.post[@"image"];
-            [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-                self.postImageView.image = [UIImage imageWithData:data];
-            }];
-        
+        PFFileObject * postImage = self.post[@"image"]; // set your column name from Parse here
+        NSURL * imageURL = [NSURL URLWithString:postImage.url];
+        [self.postImageView setImageWithURL:imageURL];
+
         // Sets captions
         self.postCaption.text = self.post[@"caption"];
         

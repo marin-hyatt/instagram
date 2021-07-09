@@ -398,11 +398,10 @@
             </objects>
             <point key="canvasLocation" x="1960.8695652173915" y="952.90178571428567"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Controller-->
         <scene sceneID="08f-Pz-SDd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JNh-ZT-spJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tabBarController storyboardIdentifier="HomeFeedNavigationController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Us7-fn-hg1" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeFeedNavigationController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Us7-fn-hg1" customClass="TabController" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XM7-yD-2xH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -414,6 +413,7 @@
                         <segue destination="BBu-mt-7AB" kind="relationship" relationship="viewControllers" id="gaO-vu-okv"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JNh-ZT-spJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="646" y="63"/>
         </scene>

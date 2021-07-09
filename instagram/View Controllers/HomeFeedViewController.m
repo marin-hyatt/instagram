@@ -19,6 +19,7 @@
 - (IBAction)postPhoto:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 @end
 
 @implementation HomeFeedViewController
@@ -38,6 +39,13 @@
     [self.feedTableView insertSubview:self.refreshControl atIndex:0];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row + 1 == [self.feed count] && !self.isMoreDataLoading){
+        self.isMoreDataLoading = true;
+        [self loadPosts];
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FeedViewCell *cell = [self.feedTableView dequeueReusableCellWithIdentifier:@"FeedViewCell"];
     
@@ -52,14 +60,6 @@
     return [self.feed count];
 }
 
-//// If there are more posts to display, get more posts
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row == [self.feed count] - 1) {
-//        [self loadPosts];
-//        [self.feedTableView reloadData];
-//    }
-//}
-
 -(void)loadPosts {
     NSLog(@"Load posts");
     //Querys Parse for instagram posts
@@ -73,6 +73,7 @@
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
+            self.isMoreDataLoading = false;
             // do something with the data fetched
             NSLog(@"Feed successfully loaded");
             self.feed = posts;

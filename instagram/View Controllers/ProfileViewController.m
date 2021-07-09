@@ -26,11 +26,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"USER!!!: %@", self.user);
+    
     self.postCollectionView.delegate = self;
     self.postCollectionView.dataSource = self;
     
     // Sets the user for the profile page to the current user, then updates the view with the relevant information
-    self.profileView.user = [PFUser currentUser];
+    self.profileView.user = self.user;
     [self.profileView updateAppearance];
     
     self.inset = 0;
@@ -64,7 +66,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    [postQuery whereKey:@"author" equalTo:[PFUser currentUser]];
+    [postQuery whereKey:@"author" equalTo:self.user];
     postQuery.limit = 20;
 
     // fetch data asynchronously
